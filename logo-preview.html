@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TypoTester · logo v0.1</title>
+<style>
+  body{margin:0;font-family:ui-monospace,monospace;background:#0b1220;color:#e2e8f0;padding:40px;display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start}
+  .card{border-radius:18px;padding:28px 32px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  .light{background:#fdfdfb;color:#0f172a}.dark{background:#0f172a}
+  .label{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.6;margin-bottom:14px}
+  /* variante horizontal */
+  .row{display:flex;align-items:baseline;gap:18px}
+  .row .t{font-size:46px;line-height:1}
+  .s1{font-family:Georgia,'Times New Roman',serif;font-style:italic;color:#0f172a}
+  .s2{font-family:'Helvetica Neue',Arial,sans-serif;font-weight:800;color:#22d3ee}
+  .s3{font-family:ui-monospace,'Courier New',monospace;color:#475569}
+  .dark .s1{color:#f8fafc}.dark .s3{color:#94a3b8}
+</style></head>
+<body>
+  <div class="card light"><div class="label">Primario · claro</div><img src="logo.svg" width="320" alt="logo"></div>
+  <div class="card dark"><div class="label">Primario · oscuro</div><img src="logo.svg" width="320" alt="logo"></div>
+  <div class="card light"><div class="label">Variante horizontal</div>
+    <div class="row"><span class="t s1">test</span><span class="t s2">test</span><span class="t s3">test</span></div>
+  </div>
+  <div class="card dark"><div class="label">Horizontal · oscuro</div>
+    <div class="row"><span class="t s1">test</span><span class="t s2">test</span><span class="t s3">test</span></div>
+  </div>
+</body></html>

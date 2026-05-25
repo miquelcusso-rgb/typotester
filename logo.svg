@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 230" width="360" height="230" role="img" aria-label="TypoTester logo: la palabra test en tres tipografías">
+  <title>TypoTester</title>
+  <!-- tres "test", una tipografía cada uno: serif · sans · mono -->
+  <g font-weight="400">
+    <!-- serif -->
+    <text x="34" y="74" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="56" fill="#0f172a">test</text>
+    <text x="250" y="70" font-family="ui-monospace, 'Courier New', monospace" font-size="13" fill="#94a3b8" letter-spacing="2">SERIF</text>
+    <!-- sans -->
+    <text x="34" y="142" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="56" fill="#22d3ee">test</text>
+    <text x="250" y="138" font-family="ui-monospace, 'Courier New', monospace" font-size="13" fill="#94a3b8" letter-spacing="2">SANS</text>
+    <!-- mono -->
+    <text x="34" y="210" font-family="ui-monospace, 'Courier New', monospace" font-size="50" fill="#475569">test</text>
+    <text x="250" y="206" font-family="ui-monospace, 'Courier New', monospace" font-size="13" fill="#94a3b8" letter-spacing="2">MONO</text>
+  </g>
+  <!-- barra de baseline / acento -->
+  <rect x="34" y="20" width="6" height="194" rx="3" fill="#22d3ee"/>
+</svg>
