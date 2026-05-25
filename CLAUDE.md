@@ -20,13 +20,19 @@
 
 ## Estado actual
 
-🔵 Scaffold listo. MVP pendiente. Ver scope en `PROJECTS.md`.
+🟡 MVP implementado en rama `feature/mvp`: selector buscable de Google Fonts, comparador A/B/C, controles de tamaño/interlineado/espaciado/color, estado compartible por URL y presets titular/párrafo. `design-tokens.css` vendado en el repo para que sea autónomo en GitHub Pages.
+
+## Arquitectura del MVP
+
+- `script.js`: catálogo curado de ~90 familias (nombre, categoría, pesos, itálica), estado en memoria, carga dinámica de fuentes vía `<link>` a `fonts.googleapis.com/css2` (uno por panel), combobox accesible y sincronización con la query string (debounced `history.replaceState`).
+- Paneles `contenteditable` sincronizados con el textarea global. Controles globales aplicados con CSS custom props (`--tt-*`) en `#stage`; familia/peso/estilo por panel vía estilo inline.
+- Sin build ni dependencias. UI en system-sans + mono; las Google Fonts solo se cargan para la previsualización.
 
 ## Tareas pendientes
 
 - [ ] Confirmar dominio definitivo (ahora: `probatipo.example.com`).
-- [ ] Crear repo en GitHub y conectar como remote.
-- [ ] Implementar lógica del MVP.
+- [x] Crear repo en GitHub y conectar como remote.
+- [x] Implementar lógica del MVP.
 - [ ] Generar favicons (realfavicongenerator.net).
 - [ ] og-image.png 1200×630.
 - [ ] Dar de alta Plausible/Umami y añadir snippet.

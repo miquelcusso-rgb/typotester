@@ -11,9 +11,12 @@
 <link rel="canonical" href="https://probatipo.example.com/" />
 
 <link rel="icon" href="/favicon.ico" sizes="any" />
-<link rel="icon" href="/icon.svg" type="image/svg+xml" />
+<link rel="icon" href="/logo.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/manifest.webmanifest" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="TypoTester" />
@@ -48,25 +51,73 @@
 <body>
 
 <header class="site-header">
-  <a href="/" class="brand">TypoTester</a>
-  <nav><!-- TODO: nav --></nav>
+  <a href="/" class="brand">
+    <img src="logo.svg" width="120" height="77" alt="" class="brand__logo" />
+    <span class="brand__name">TypoTester</span>
+  </a>
 </header>
 
 <main>
   <section class="hero">
-    <h1>Prueba cualquier tipografía antes de usarla</h1>
-    <p class="intro">Carga Google Fonts o tu archivo local y previsualiza en tiempo real con tu propio texto. Comparador A/B y presets para titulares y cuerpo.</p>
+    <h1>Prueba y compara tipografías online</h1>
+    <p class="intro">Elige cualquier familia de Google Fonts, escribe tu propio texto y compáralas lado a lado. Ajusta tamaño, interlineado, espaciado y color, y comparte el resultado por URL.</p>
   </section>
 
-  <section class="tool">
-    <!-- TODO: implementación del MVP. Ver PROJECTS.md para scope. -->
-    <p class="todo">Scaffold listo. Implementación pendiente.</p>
+  <section class="controls" aria-label="Controles de previsualización">
+    <div class="ctl ctl--text">
+      <label for="ctl-text">Texto de prueba</label>
+      <textarea id="ctl-text" rows="2" spellcheck="false" placeholder="Escribe aquí…"></textarea>
+    </div>
+
+    <div class="ctl-grid">
+      <div class="ctl">
+        <label for="ctl-size">Tamaño <output id="out-size" class="ctl__val"></output></label>
+        <input type="range" id="ctl-size" min="8" max="200" step="1" />
+      </div>
+      <div class="ctl">
+        <label for="ctl-lh">Interlineado <output id="out-lh" class="ctl__val"></output></label>
+        <input type="range" id="ctl-lh" min="0.8" max="2.5" step="0.05" />
+      </div>
+      <div class="ctl">
+        <label for="ctl-ls">Espaciado <output id="out-ls" class="ctl__val"></output></label>
+        <input type="range" id="ctl-ls" min="-5" max="20" step="0.5" />
+      </div>
+      <div class="ctl ctl--colors">
+        <span class="ctl__group-label">Color</span>
+        <div class="color-row">
+          <label class="color-field"><input type="color" id="ctl-fg" /><span>Texto</span></label>
+          <label class="color-field"><input type="color" id="ctl-bg" /><span>Fondo</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="ctl-actions">
+      <div class="seg" role="group" aria-label="Número de paneles a comparar">
+        <span class="seg__label">Paneles</span>
+        <button type="button" class="seg__btn" data-n="1" aria-pressed="false">1</button>
+        <button type="button" class="seg__btn" data-n="2" aria-pressed="false">2</button>
+        <button type="button" class="seg__btn" data-n="3" aria-pressed="false">3</button>
+      </div>
+      <div class="presets" role="group" aria-label="Presets">
+        <span class="seg__label">Preset</span>
+        <button type="button" class="preset__btn" data-preset="titular">Titular</button>
+        <button type="button" class="preset__btn" data-preset="parrafo">Párrafo</button>
+      </div>
+      <div class="actions-right">
+        <button type="button" id="btn-reset" class="btn btn--ghost">Restablecer</button>
+        <button type="button" id="btn-share" class="btn btn--accent">Compartir enlace</button>
+      </div>
+    </div>
   </section>
+
+  <section class="stage" id="stage" data-n="2" aria-label="Paneles de comparación"></section>
 </main>
 
 <footer class="site-footer">
-  <p>&copy; <span id="year"></span> TypoTester · hecho por <a href="https://miquelcusso-rgb.github.io" rel="noopener">miquelcusso</a></p>
+  <p>&copy; <span id="year"></span> TypoTester · hecho por <a href="https://miquelcusso-rgb.github.io" rel="noopener">miquelcusso</a> · fuentes de <a href="https://fonts.google.com" rel="noopener">Google Fonts</a></p>
 </footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 
 <script src="script.js" defer></script>
 </body>

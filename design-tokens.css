@@ -1,0 +1,121 @@
+/* design-tokens.css — Variables CSS compartidas
+   Copia este archivo a cada proyecto o impórtalo vía <link>.
+   Está pensado para tema oscuro hi-tech por defecto + light opcional. */
+
+:root {
+  /* ───── Colores base (tema oscuro por defecto, estilo Luna Llena / hi-tech) ───── */
+  --bg:           #0f1115;
+  --bg-elevated: #171a21;
+  --bg-elevated-2: #1f232c;
+  --border:      #2a2f3a;
+  --text:        #e6e8ec;
+  --text-muted:  #9aa3b2;
+  --text-dim:    #6b7280;
+
+  /* ───── Acentos (cámbialos por marca) ───── */
+  --accent:      #6ea8ff;
+  --accent-2:    #9d7cff;
+  --accent-on:   #0c1018;
+
+  /* ───── Estados ───── */
+  --success:     #2fbf71;
+  --warning:     #f3c969;
+  --danger:      #ff6b6b;
+  --info:        #6ea8ff;
+
+  /* ───── Tipografía ───── */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --fs-xs:  12px;
+  --fs-sm:  13px;
+  --fs-base: 15px;
+  --fs-md:  17px;
+  --fs-lg:  20px;
+  --fs-xl:  24px;
+  --fs-2xl: 32px;
+  --fs-3xl: 44px;
+  --fs-4xl: 60px;
+
+  --lh-tight: 1.15;
+  --lh-base:  1.5;
+  --lh-relaxed: 1.7;
+
+  /* ───── Spacing (escala 4/8) ───── */
+  --sp-0:  0;
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  24px;
+  --sp-6:  32px;
+  --sp-7:  48px;
+  --sp-8:  64px;
+  --sp-9:  96px;
+
+  /* ───── Radios ───── */
+  --r-sm:  4px;
+  --r-md:  8px;
+  --r-lg:  12px;
+  --r-xl:  20px;
+  --r-full: 9999px;
+
+  /* ───── Sombras ───── */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.25);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.35);
+  --shadow-lg: 0 16px 40px rgba(0,0,0,0.5);
+
+  /* ───── Transiciones ───── */
+  --t-fast: 120ms ease;
+  --t-base: 220ms ease;
+  --t-slow: 400ms ease;
+
+  /* ───── Containers ───── */
+  --container-max: 1100px;
+  --container-pad: var(--sp-5);
+}
+
+/* ───── Light mode (auto, opcional) ───── */
+@media (prefers-color-scheme: light) {
+  :root.auto-theme {
+    --bg:           #fafbfc;
+    --bg-elevated: #ffffff;
+    --bg-elevated-2: #f3f4f6;
+    --border:      #e5e7eb;
+    --text:        #0f1115;
+    --text-muted:  #4b5563;
+    --text-dim:    #9aa3b2;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 16px 40px rgba(0,0,0,0.12);
+  }
+}
+
+/* ───── Reset mínimo ───── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5 { line-height: var(--lh-tight); margin: 0 0 var(--sp-4); }
+h1 { font-size: var(--fs-3xl); letter-spacing: -0.02em; }
+h2 { font-size: var(--fs-2xl); letter-spacing: -0.01em; }
+h3 { font-size: var(--fs-xl); }
+h4 { font-size: var(--fs-lg); }
+
+p { margin: 0 0 var(--sp-4); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+button, input, select, textarea { font: inherit; color: inherit; }
+img, video, svg { max-width: 100%; height: auto; display: block; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: var(--r-sm); }
