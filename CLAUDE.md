@@ -20,7 +20,9 @@
 
 ## Estado actual
 
-🔵 Scaffold listo. MVP pendiente. Ver scope en `PROJECTS.md`.
+⛔ **CANCELADO (2026-05-25)** tras estudio de mercado (`ESTUDIO-MERCADO.md`). El nicho "comparar Google Fonts lado a lado" está comoditizado (Google Fonts + docena de clones gratuitos), sin hueco SEO para un dominio nuevo ni monetización viable como herramienta pura. Único ángulo que lo habría justificado: developer/rendimiento web (descartado por ahora).
+
+El MVP construido (selector de Google Fonts, comparador A/B/C, controles, URL compartible) vive en la rama `feature/mvp` **sin mergear**, como pieza de portfolio. No se continúa el desarrollo.
 
 ## Tareas pendientes
 
