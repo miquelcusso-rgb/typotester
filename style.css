@@ -1,0 +1,33 @@
+/* TypoTester · estilos del sitio
+   Tokens compartidos viven en ~/Documents/sites-system/shared/design-tokens.css
+   Para usarlos: copia design-tokens.css a este repo o haz @import vía URL pública.
+*/
+
+@import url("../../shared/design-tokens.css");
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sp-4) var(--sp-5);
+  border-bottom: 1px solid var(--border);
+}
+.brand { font-weight: 700; letter-spacing: -0.01em; color: var(--text); text-decoration: none; }
+
+main { max-width: var(--container-max); margin: 0 auto; padding: var(--sp-7) var(--container-pad); }
+
+.hero { text-align: center; margin-bottom: var(--sp-7); }
+.hero h1 { font-size: var(--fs-3xl); margin-bottom: var(--sp-3); background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero .intro { color: var(--text-muted); font-size: var(--fs-md); max-width: 640px; margin: 0 auto; }
+
+.tool {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+  min-height: 240px;
+  display: flex; align-items: center; justify-content: center;
+}
+.tool .todo { color: var(--text-muted); font-style: italic; }
+
+.site-footer { padding: var(--sp-6) var(--container-pad); border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: var(--fs-sm); }
