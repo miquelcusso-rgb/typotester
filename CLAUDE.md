@@ -20,7 +20,9 @@
 
 ## Estado actual
 
-🟡 MVP implementado en rama `feature/mvp`: selector buscable de Google Fonts, comparador A/B/C, controles de tamaño/interlineado/espaciado/color, estado compartible por URL y presets titular/párrafo. `design-tokens.css` vendado en el repo para que sea autónomo en GitHub Pages.
+⛔ **CANCELADO (2026-05-25)** tras estudio de mercado (`ESTUDIO-MERCADO.md`). El nicho "comparar Google Fonts lado a lado" está comoditizado (Google Fonts + docena de clones gratuitos), sin hueco SEO para un dominio nuevo ni monetización viable como herramienta pura. El MVP queda como pieza de portfolio; el PR `feature/mvp` se cerró sin mergear. Único ángulo que lo habría justificado: developer/rendimiento web (descartado por ahora).
+
+MVP (rama `feature/mvp`, no mergeada): selector buscable de Google Fonts, comparador A/B/C, controles de tamaño/interlineado/espaciado/color, estado compartible por URL y presets titular/párrafo. `design-tokens.css` vendado en el repo para que sea autónomo en GitHub Pages.
 
 ## Arquitectura del MVP
 
